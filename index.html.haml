@@ -1,0 +1,73 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{ :charset => "utf-8" }
+    %meta{ 'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
+    %meta{ :name => "description", :content => '' }
+
+    -# Custom stylesheets
+    %link{:href => "assets/img/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %link{:href => "assets/css/normalize.css", :rel => "stylesheet"}
+    %link{:href => "assets/css/application.css", :rel => "stylesheet"}
+
+    -# Jquery and other stuffs here
+    %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+
+    -# Firefox OS Blocks
+    %link{:href => "assets/shared/style/headers.css", :rel => "stylesheet"}
+    %link{:href => "assets/shared/style/buttons.css", :rel => "stylesheet"}
+    %link{:href => "assets/shared/style/status.css", :rel => "stylesheet"}
+    %link{:href => "assets/shared/style/input_areas.css", :rel => "stylesheet"}
+    %link{:href => "assets/shared/style/switches.css", :rel => "stylesheet"}
+    %link{:href => "assets/shared/style_unstable/progress_activity.css", :rel => "stylesheet"}
+    %link{:href => "assets/shared/style_unstable/tabs.css", :rel => "stylesheet"}
+
+    %title MyApp
+  %body
+    %section{:role => "region"}
+      %header#title 
+        %h1 Main Title of App 
+    
+    %section#main
+      %button#button1
+        Button 1 
+      %button#button2.recommend
+        Button 2
+      %button#button2.danger
+        Button 2
+
+      %form{role: "search"}
+        %button{type: "submit"} Cancel
+        %p
+          %input{placeholder: "Search...", required: "", type: "text"}/
+          %button{type: "reset"} Clear
+
+      %progress
+
+      %label.pack-checkbox
+        %input{checked: "checked", type: "checkbox"}/
+        %span
+      %label.pack-checkbox
+        %input{type: "checkbox"}/
+        %span
+
+      %ul{"data-items" => "2", "data-type" => "filter", role: "tablist"}
+        %li#filter1-1{role: "tab"}
+          %a{href: "#filter1-1"} Action 01
+        %li#filter1-2{role: "tab"}
+          %a{href: "#filter1-2"} Action 02
+      %ul{"data-items" => "3", "data-type" => "filter", role: "tablist"}
+        %li#filter2-1{role: "tab"}
+          %a{href: "#filter2-1"} Action 01
+        %li#filter2-2{role: "tab"}
+          %a{href: "#filter2-2"} Action 02
+        %li#filter2-3{role: "tab"}
+          %a{href: "#filter2-3"} Action 02
+
+    %section{:role => "status"}
+      #footer
+        %a{:href => '#', :id => "install"}
+          Install
+
+    %script{:src => "assets/js/application.js"}
